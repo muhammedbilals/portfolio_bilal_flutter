@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
+import 'package:portfolio_bilal_flutter/presentation/widgets/appbar_button_widget.dart';
 
 //main appbar that can be used across the app
 
@@ -13,22 +14,24 @@ class AppBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: padding),
+    return  Padding(
+      padding: EdgeInsets.symmetric(horizontal: padding),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Container(
-            width: width * 0.1,
-            height: width * 0.03,
-            decoration: const BoxDecoration(color: colorwhite),
-            child: const Center(
-              child: Text(
-                'HOME',
-                style: TextStyle(
-                    fontSize: 18, color: colorred, fontWeight: FontWeight.w900),
-              ),
-            ),
+        
+          AppbarButtonWidget(
+            selected: true,
+            title: 'Home',
+          ),
+          AppbarButtonWidget(
+            title: 'Projects',
+          ),
+          AppbarButtonWidget(
+            title: 'Experties',
+          ),
+          AppbarButtonWidget(
+            title: 'About',
           )
         ],
       ),
