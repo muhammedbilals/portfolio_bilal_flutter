@@ -19,5 +19,6 @@ const double padding15 = 15.0;
 
 const double padding20 = 20.0;
 const double padding30 = 30.0;
+const double padding40 = 40.0;
 
 String bullet = "\u2022 ";

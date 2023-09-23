@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: colorblack,
         body: Padding(
           padding:
-              EdgeInsets.symmetric(horizontal: padding30, vertical: padding),
+              EdgeInsets.symmetric(horizontal: padding40, vertical: padding),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.end,
@@ -29,20 +29,40 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ContainerTileWidget(
-                      w: 0.634, h: 0.26, icon: Icons.info, text: 'About'),
+                      color: colorgrey,
+                      w: 0.625,
+                      h: 0.26,
+                      icon: Icons.info,
+                      text: 'About'),
                   ContainerTileWidget(
-                      w: 0.313, h: 0.26, icon: Icons.info, text: 'About'),
+                      color: colorwhite,
+                      w: 0.309,
+                      h: 0.26,
+                      icon: Icons.info,
+                      text: 'About'),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ContainerTileWidget(
-                      w: 0.313, h: 0.26, icon: Icons.info, text: 'About'),
+                      color: colorwhite,
+                      w: 0.309,
+                      h: 0.26,
+                      icon: Icons.info,
+                      text: 'About'),
                   ContainerTileWidget(
-                      w: 0.313, h: 0.26, icon: Icons.info, text: 'About'),
+                      color: colorwhite,
+                      w: 0.309,
+                      h: 0.26,
+                      icon: Icons.info,
+                      text: 'About'),
                   ContainerTileWidget(
-                      w: 0.313, h: 0.26, icon: Icons.info, text: 'About'),
+                      color: colorwhite,
+                      w: 0.309,
+                      h: 0.26,
+                      icon: Icons.info,
+                      text: 'About'),
                 ],
               ),
             ],

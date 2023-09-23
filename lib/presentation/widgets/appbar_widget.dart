@@ -14,12 +14,11 @@ class AppBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
 
-    return  Padding(
+    return const Padding(
       padding: EdgeInsets.symmetric(horizontal: padding),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-        
           AppbarButtonWidget(
             selected: true,
             title: 'Home',

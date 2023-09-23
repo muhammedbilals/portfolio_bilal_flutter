@@ -9,12 +9,14 @@ class ContainerTileWidget extends StatelessWidget {
     required this.h,
     required this.text,
     required this.icon,
+    required this.color,
   });
 
   final double w;
   final double h;
   final String text;
   final IconData icon;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +24,12 @@ class ContainerTileWidget extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     return Padding(
       padding: const EdgeInsets.all(padding5),
-      child: Container(
+      child: AnimatedContainer(
+        curve: Curves.bounceInOut,
+        
+        duration: const Duration(seconds: 1),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(70), color: colorgrey),
+            borderRadius: BorderRadius.circular(70), color: color),
         width: width * w,
         height: height * h,
         child: Padding(
@@ -42,7 +47,9 @@ class ContainerTileWidget extends StatelessWidget {
                     Icon(icon, color: Colors.white),
                     Text(
                       text,
-                      style: const TextStyle(color: colorwhite, fontSize: 20),
+                      style: TextStyle(
+                          color: color == colorgrey ? colorwhite : colorblack,
+                          fontSize: 20),
                     ),
                   ],
                 ),
