@@ -26,7 +26,6 @@ class ContainerTileWidget extends StatelessWidget {
       padding: const EdgeInsets.all(padding5),
       child: AnimatedContainer(
         curve: Curves.bounceInOut,
-        
         duration: const Duration(seconds: 1),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(70), color: color),

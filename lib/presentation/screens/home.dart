@@ -12,16 +12,16 @@ class HomeScreen extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
 
-    return const Directionality(
+    return Directionality(
       textDirection: TextDirection.ltr,
       child: Scaffold(
         // appBar: const PreferredSize(
         //     preferredSize: Size.fromHeight(150), child: AppBarWidget()),
         backgroundColor: colorblack,
         body: Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: padding40, vertical: padding),
-          child: Column(
+          padding: EdgeInsets.symmetric(
+              horizontal: width * 0.025, vertical: padding),
+          child: const Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -31,13 +31,13 @@ class HomeScreen extends StatelessWidget {
                   ContainerTileWidget(
                       color: colorgrey,
                       w: 0.625,
-                      h: 0.26,
+                      h: 0.22,
                       icon: Icons.info,
                       text: 'About'),
                   ContainerTileWidget(
                       color: colorwhite,
                       w: 0.309,
-                      h: 0.26,
+                      h: 0.22,
                       icon: Icons.info,
                       text: 'About'),
                 ],
@@ -48,19 +48,19 @@ class HomeScreen extends StatelessWidget {
                   ContainerTileWidget(
                       color: colorwhite,
                       w: 0.309,
-                      h: 0.26,
+                      h: 0.22,
                       icon: Icons.info,
                       text: 'About'),
                   ContainerTileWidget(
                       color: colorwhite,
                       w: 0.309,
-                      h: 0.26,
+                      h: 0.22,
                       icon: Icons.info,
                       text: 'About'),
                   ContainerTileWidget(
                       color: colorwhite,
                       w: 0.309,
-                      h: 0.26,
+                      h: 0.22,
                       icon: Icons.info,
                       text: 'About'),
                 ],
