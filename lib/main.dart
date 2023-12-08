@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_bilal_flutter/presentation/controllers/menu_controller.dart';
 import 'package:provider/provider.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'home.dart';
 
@@ -17,8 +18,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: GoogleFonts.poppins().fontFamily,
         primarySwatch: Colors.blue,
       ),
       home: const Home(),

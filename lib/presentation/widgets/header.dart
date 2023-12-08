@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_bilal_flutter/presentation/controllers/menu_controller.dart';
-import 'package:portfolio_bilal_flutter/presentation/widgets/appbar_widget.dart';
+import 'package:portfolio_bilal_flutter/presentation/widgets/appbar/appbar_desktop.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/responsive.dart';
 import 'package:provider/provider.dart';
 
@@ -12,6 +12,9 @@ class Header extends StatelessWidget {
     final sideMenuController = Provider.of<SideMenuController>(context);
 
     return Row(
+      mainAxisAlignment: !Responsive.isDesktop(context)
+          ? MainAxisAlignment.start
+          : MainAxisAlignment.center,
       children: [
         if (!Responsive.isDesktop(context))
           IconButton(
