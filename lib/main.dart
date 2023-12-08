@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio_bilal_flutter/presentation/screens/home.dart';
+import 'package:portfolio_bilal_flutter/presentation/controllers/menu_controller.dart';
+import 'package:provider/provider.dart';
+
+import 'home.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(MultiProvider(
+    providers: [ChangeNotifierProvider(create: (_) => SideMenuController())],
+    child: const MyApp(),
+  ));
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-   return MaterialApp(
-        theme: ThemeData(
-          fontFamily: GoogleFonts.poppins().fontFamily,
-        ),
-        debugShowCheckedModeBanner: false,
-        home: const HomeScreen());
-
-    // home: const HomePage());
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const Home(),
+    );
   }
 }
