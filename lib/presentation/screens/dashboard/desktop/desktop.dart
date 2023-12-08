@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
+import 'package:portfolio_bilal_flutter/core/helpers/url_laucher.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/appbar_button_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/header.dart';
+import 'package:portfolio_bilal_flutter/presentation/widgets/social_media_icon.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart';
 
 class DesktopDashboard extends StatelessWidget {
@@ -20,6 +22,24 @@ class DesktopDashboard extends StatelessWidget {
         toolbarHeight: 80,
         backgroundColor: AppColors.colorblack,
         title: const Header(),
+        actions: [
+          SocialMediaIcons(
+            image: 'assets/images/github.png',
+            onTap: () {
+              launch('https://github.com/muhammedbilals', isNewTab: true);
+            },
+          ),
+          const SocialMediaIcons(
+            image: 'assets/images/linkedin.png',
+          ),
+          const SocialMediaIcons(
+            image: 'assets/images/x.png',
+          ),
+          const SocialMediaIcons(
+            image: 'assets/images/whatsapp.png',
+          ),
+          sboxW,
+        ],
       ),
       body: Container(
         padding: const EdgeInsets.all(100),
