@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
-import 'package:portfolio_bilal_flutter/presentation/widgets/appbar_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/container_tile_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,7 +9,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
+
 
     return Directionality(
       textDirection: TextDirection.ltr,
