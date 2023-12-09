@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^6.1.0
   provider: ^6.1.1
   url_launcher: ^6.2.2
+  scroll_to_id: ^1.5.1
 
 dev_dependencies:
   flutter_test:
