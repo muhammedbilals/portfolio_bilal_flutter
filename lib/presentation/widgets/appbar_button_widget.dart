@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
+import 'package:portfolio_bilal_flutter/presentation/utils/hover_effect_extention.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/hover_builder.dart';
 
 class AppbarButtonWidget extends StatelessWidget {
   const AppbarButtonWidget({
     super.key,
     required this.title,
-    this.selected = false, this.onTap,
+    this.selected = false,
+    this.onTap,
   });
   final String title;
   final bool selected;
@@ -16,8 +18,8 @@ class AppbarButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return HoverBuilder(
       builder: (isHovered) {
-        return GestureDetector(
-          onTap: () => onTap,
+        return InkWell(
+          onTap: () => onTap!(),
           child: Padding(
             padding: const EdgeInsets.all(padding),
             child: Center(
@@ -30,7 +32,7 @@ class AppbarButtonWidget extends StatelessWidget {
               ),
             ),
           ),
-        );
+        ).translateOnHover;
       },
     );
   }

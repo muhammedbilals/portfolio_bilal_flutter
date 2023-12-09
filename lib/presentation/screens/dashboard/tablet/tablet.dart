@@ -10,7 +10,7 @@ class TabletDashboard extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.green,
       appBar: AppBar(
-        title: const Header(),
+        title:  Header(),
       ),
     );
   }

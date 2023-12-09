@@ -10,7 +10,7 @@ class MobileDashboard extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.red,
       appBar: AppBar(
-        title: const Header(),
+        title:  Header(),
       ),
     );
   }
