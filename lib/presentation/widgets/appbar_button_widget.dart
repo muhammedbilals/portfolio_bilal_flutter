@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
 import 'package:portfolio_bilal_flutter/presentation/utils/hover_effect_extention.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/hover_builder.dart';
@@ -20,15 +21,18 @@ class AppbarButtonWidget extends StatelessWidget {
       builder: (isHovered) {
         return InkWell(
           onTap: () => onTap!(),
-          child: Padding(
-            padding: const EdgeInsets.all(padding),
-            child: Center(
-              child: Text(
-                title,
-                style: TextStyle(
-                    fontSize: 15,
-                    color: isHovered ? Colors.white : Colors.grey,
-                    fontWeight: FontWeight.w500),
+          child: Container(
+            color: selected ? AppColors.colorgrey : null,
+            child: Padding(
+              padding: const EdgeInsets.all(padding),
+              child: Center(
+                child: Text(
+                  title,
+                  style: TextStyle(
+                      fontSize: 15,
+                      color: isHovered ? Colors.white : Colors.grey,
+                      fontWeight: FontWeight.w500),
+                ),
               ),
             ),
           ),

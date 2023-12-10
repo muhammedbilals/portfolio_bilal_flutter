@@ -8,11 +8,12 @@ import 'package:portfolio_bilal_flutter/presentation/widgets/responsive.dart';
 import 'package:provider/provider.dart';
 
 class Header extends StatelessWidget {
-  Header({super.key, this.onTap, this.controller});
+  Header({super.key, this.onTap});
 
   final void Function(int index)? onTap;
-  final TabController? controller;
+
   List<String> titile = ['Home', 'Projects', 'Experties', 'About'];
+  int isSelected = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -29,50 +30,18 @@ class Header extends StatelessWidget {
             icon: const Icon(Icons.menu, color: Colors.black),
           ),
         if (!Responsive.isMobile(context) && !Responsive.isTablet(context))
-          // Row(
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     children: List.generate(
-          //       4,
-          //       (index) {
-          //         return AppbarButtonWidget(
-          //           onTap: () => onTap!(index),
-          //           title: titile[index],
-          //         );
-          //       },
-          //     ))
-          ButtonsTabBar(
-            contentPadding: const EdgeInsets.symmetric(horizontal: 20),
-            buttonMargin:
-                const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-            height: 55,
-            controller: controller,
-            elevation: 1,
-            backgroundColor: Colors.red, radius: 15,
-            unselectedBackgroundColor: AppColors.colorwhite,
-            labelStyle: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w500,
-            ),
-            unselectedLabelStyle: const TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w500,
-            ),
-            // Add your tabs here
-            tabs: const [
-              Tab(
-                text: 'Home',
-              ),
-              Tab(
-                text: 'Experience',
-              ),
-              Tab(
-                text: 'Projects',
-              ),
-              Tab(
-                text: 'About',
-              ),
-            ],
-          ),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(
+                4,
+                (index) {
+                  return AppbarButtonWidget(
+                    
+                    onTap: () => onTap!(index),
+                    title: titile[index],
+                  );
+                },
+              ))
       ],
     );
   }
