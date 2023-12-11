@@ -8,6 +8,7 @@ import 'package:portfolio_bilal_flutter/presentation/widgets/button_widget.dart'
 import 'package:portfolio_bilal_flutter/presentation/widgets/header.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/hover_builder.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/pages/home_page.dart';
+import 'package:portfolio_bilal_flutter/presentation/widgets/pages/projects_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/social_media_icon.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart';
 
@@ -72,11 +73,9 @@ class _DesktopDashboardState extends State<DesktopDashboard> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            HomePage(key: homeKey),
-            HomePage(key: projectsKey),
+            ProjectsPage(key: projectsKey),
             HomePage(key: expertiesKey),
             HomePage(key: aboutKey),
-           
           ],
         ),
       ),

@@ -4,13 +4,16 @@ import 'package:portfolio_bilal_flutter/presentation/utils/hover_effect_extentio
 import 'package:portfolio_bilal_flutter/presentation/widgets/hover_builder.dart';
 
 class TextContainer extends StatelessWidget {
-  const TextContainer({super.key, required this.text, required this.image});
+  const TextContainer(
+      {super.key, required this.text, required this.image, this.width});
   final String text;
   final String image;
+  final double? width;
   @override
   Widget build(BuildContext context) {
     return HoverBuilder(
         builder: (isHovered) => Container(
+              width: width,
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
               decoration: BoxDecoration(
                   color: isHovered

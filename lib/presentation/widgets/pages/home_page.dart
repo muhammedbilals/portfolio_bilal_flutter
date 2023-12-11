@@ -73,13 +73,17 @@ class HomePage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 100),
                 child: Wrap(spacing: 15, children: [
                   ButtonWidget(
-                    icon: Icons.download_for_offline_rounded,
-                    text: 'Download CV',
-                  ),
+                      textColor: AppColors.colorwhite,
+                      buttonColor: AppColors.colorred,
+                      icon: Icons.download_for_offline_rounded,
+                      text: 'Download CV',
+                      width: 200),
                   ButtonWidget(
-                    icon: Icons.mail,
-                    text: 'Sent a Mail',
-                  ),
+                      textColor: AppColors.colorwhite,
+                      buttonColor: AppColors.colorred,
+                      icon: Icons.mail,
+                      text: 'Sent a Mail',
+                      width: 200),
                 ]),
               )
               // Expanded(

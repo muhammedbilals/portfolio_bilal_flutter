@@ -7,11 +7,19 @@ class ButtonWidget extends StatelessWidget {
   const ButtonWidget({
     super.key,
     required this.text,
-    required this.icon,
+    this.icon,
     this.onTap,
+    required this.width,
+    this.image,
+    required this.buttonColor,
+    required this.textColor,
   });
   final String text;
-  final IconData icon;
+  final double width;
+  final Color buttonColor;
+  final Color textColor;
+  final IconData? icon;
+  final String? image;
   final void Function()? onTap;
 
   @override
@@ -24,22 +32,28 @@ class ButtonWidget extends StatelessWidget {
                 cursor: SystemMouseCursors.click,
                 child: Container(
                   height: 50,
-                  width: 200,
+                  width: width,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                   decoration: BoxDecoration(
-                      color: isHovered ? AppColors.bggray : AppColors.colorred,
+                      color: isHovered ? AppColors.bggray : buttonColor,
                       borderRadius: BorderRadius.circular(15)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(icon, color: AppColors.colorwhite),
+                      icon != null
+                          ? Icon(icon, color: textColor)
+                          : const SizedBox.shrink(),
+                      image != null
+                          ? SizedBox(
+                              height: 20, width: 20, child: Image.asset(image!))
+                          : const SizedBox.shrink(),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 5.0),
                         child: Text(
                           text,
-                          style: const TextStyle(
-                              color: AppColors.colorwhite, letterSpacing: 0.5),
+                          style:
+                              TextStyle(color: textColor, letterSpacing: 0.5),
                         ),
                       )
                     ],
