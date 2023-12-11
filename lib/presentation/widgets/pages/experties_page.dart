@@ -4,8 +4,8 @@ import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
 import 'package:portfolio_bilal_flutter/presentation/utils/hover_effect_extention.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/project_card_widget.dart';
 
-class ProjectsPage extends StatelessWidget {
-  const ProjectsPage({
+class ExpertiesPage extends StatelessWidget {
+  const ExpertiesPage({
     super.key,
   });
 
@@ -33,19 +33,6 @@ class ProjectsPage extends StatelessWidget {
             ),
           ),
           sbox20,
-          SizedBox(
-            height: 800,
-            child: ListView.builder(
-              scrollDirection: Axis
-                  .horizontal, // Note: This property is usually used for vertical scrolling.
-              shrinkWrap: true,
-              itemCount: 6,
-              itemBuilder: (context, index) {
-                // Use the actual index to create unique instances of ProjectCard.
-                return const ProjectCard().translateOnHover;
-              },
-            ),
-          ),
         ],
       ),
     );

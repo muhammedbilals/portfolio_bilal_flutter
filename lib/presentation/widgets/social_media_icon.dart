@@ -18,12 +18,13 @@ class SocialMediaIcons extends StatelessWidget {
         child: MouseRegion(
           cursor: SystemMouseCursors.click,
           child: SizedBox(
-              height: 20,
-              width: 20,
-              child: Image.asset(
-                image,
-                fit: BoxFit.cover,
-              ).translateOnHover),
+            height: 20,
+            width: 20,
+            child: Image.asset(
+              image,
+              fit: BoxFit.cover,
+            ).translateOnHover,
+          ),
         ),
       ),
     );
