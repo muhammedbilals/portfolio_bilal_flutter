@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
-import 'package:portfolio_bilal_flutter/presentation/utils/hover_effect_extention.dart';
-import 'package:portfolio_bilal_flutter/presentation/widgets/project_card_widget.dart';
 
 class ExpertiesPage extends StatelessWidget {
   const ExpertiesPage({
@@ -19,7 +17,7 @@ class ExpertiesPage extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.only(left: 15.0),
             child: Text(
-              "Projects",
+              "Experties",
               style: TextStyle(color: AppColors.colorwhite, fontSize: 25),
             ),
           ),
@@ -27,7 +25,7 @@ class ExpertiesPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 15.0),
             child: Text(
-              "The Projects i have contributed till now",
+              "Tools and services i am using for my projects",
               style: TextStyle(
                   color: AppColors.colorwhite.withOpacity(0.5), fontSize: 16),
             ),

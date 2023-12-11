@@ -4,6 +4,7 @@ import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
 import 'package:portfolio_bilal_flutter/core/helpers/url_laucher.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/appbar_button_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/header.dart';
+import 'package:portfolio_bilal_flutter/presentation/widgets/pages/experties_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/pages/home_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/pages/projects_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/social_media_icon.dart';
@@ -72,7 +73,7 @@ class _DesktopDashboardState extends State<DesktopDashboard> {
           children: [
             HomePage(key: homeKey),
             ProjectsPage(key: projectsKey),
-            HomePage(key: expertiesKey),
+            ExpertiesPage(key: expertiesKey),
             HomePage(key: aboutKey),
           ],
         ),

@@ -68,6 +68,7 @@ class ProjectCard extends StatelessWidget {
                       sbox20,
                       sbox20,
                       sbox20,
+                      sbox20,
                       const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [

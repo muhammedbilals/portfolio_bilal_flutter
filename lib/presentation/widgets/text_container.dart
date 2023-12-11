@@ -11,34 +11,37 @@ class TextContainer extends StatelessWidget {
   final double? width;
   @override
   Widget build(BuildContext context) {
-    return HoverBuilder(
-        builder: (isHovered) => Container(
-              width: width,
-              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-              decoration: BoxDecoration(
-                  color: isHovered
-                      ? AppColors.bggray
-                      : const Color.fromARGB(223, 81, 81, 81),
-                  borderRadius: BorderRadius.circular(15)),
-              child: Row(
-                children: [
-                  SizedBox(
-                      height: 40,
-                      width: 40,
-                      child: Image.asset(
-                        image,
-                        fit: BoxFit.cover,
-                      )),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                    child: Text(
-                      text,
-                      style: const TextStyle(
-                          color: AppColors.colorwhite, letterSpacing: 0.5),
-                    ),
-                  )
-                ],
-              ),
-            ).translateOnHover);
+    return Expanded(
+      child: HoverBuilder(
+          builder: (isHovered) => Container(
+                width: width,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                decoration: BoxDecoration(
+                    color: isHovered
+                        ? AppColors.bggray
+                        : const Color.fromARGB(223, 81, 81, 81),
+                    borderRadius: BorderRadius.circular(15)),
+                child: Row(
+                  children: [
+                    SizedBox(
+                        height: 40,
+                        width: 40,
+                        child: Image.asset(
+                          image,
+                          fit: BoxFit.cover,
+                        )),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                      child: Text(
+                        text,
+                        style: const TextStyle(
+                            color: AppColors.colorwhite, letterSpacing: 0.5),
+                      ),
+                    )
+                  ],
+                ),
+              ).translateOnHover),
+    );
   }
 }
