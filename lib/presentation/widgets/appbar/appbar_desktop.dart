@@ -3,6 +3,7 @@ import 'package:portfolio_bilal_flutter/presentation/widgets/appbar_button_widge
 
 //main appbar that can be used across the app
 
+// ignore: must_be_immutable
 class AppBarDeskTop extends StatelessWidget {
   final Icon? icons;
   final bool? leadingIcon;

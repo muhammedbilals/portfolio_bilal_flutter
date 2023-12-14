@@ -39,11 +39,11 @@ class ProjectsPage extends StatelessWidget {
               height: 800,
               child: ListView.builder(
                 scrollDirection: Axis
-                    .horizontal, // Note: This property is usually used for vertical scrolling.
+                    .horizontal, 
                 shrinkWrap: true,
                 itemCount: 6,
                 itemBuilder: (context, index) {
-                  // Use the actual index to create unique instances of ProjectCard.
+             
                   return const ProjectCard().translateOnHover;
                 },
               ),
