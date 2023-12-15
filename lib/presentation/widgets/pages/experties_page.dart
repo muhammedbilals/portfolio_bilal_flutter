@@ -25,7 +25,7 @@ class ExpertiesPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 15.0),
             child: Text(
-              "Tools and services i am using for my projects",
+              "Tools and services i am using for my projects Tools and services i am using for my projects",
               style: TextStyle(
                   color: AppColors.colorwhite.withOpacity(0.5), fontSize: 16),
             ),
@@ -36,4 +36,3 @@ class ExpertiesPage extends StatelessWidget {
     );
   }
 }
-  
