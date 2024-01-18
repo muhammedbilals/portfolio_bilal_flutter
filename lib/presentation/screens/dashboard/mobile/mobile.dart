@@ -12,6 +12,8 @@ class MobileDashboard extends StatelessWidget {
       appBar: AppBar(
         title:  Header(),
       ),
+      body: Column(),
+
     );
   }
 }
