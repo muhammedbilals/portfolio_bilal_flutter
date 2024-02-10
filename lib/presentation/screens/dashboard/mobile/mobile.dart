@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_bilal_flutter/presentation/widgets/header.dart';
-
+import 'package:flutter_sizer/flutter_sizer.dart';
+import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
+import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
+import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart';
 
 class MobileDashboard extends StatelessWidget {
   const MobileDashboard({super.key});
@@ -8,12 +10,62 @@ class MobileDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
+      backgroundColor: AppColors.colorblack,
       appBar: AppBar(
-        title:  Header(),
+        centerTitle: true,
+        title: const Text('Muhammed bilal S'),
       ),
-      body: Column(),
-
+      drawer: const Drawer(),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Hi, everyone! I'm",
+                      style:
+                          TextStyle(color: AppColors.colorwhite, fontSize: 25),
+                    ),
+                    const Text(
+                      'Muhammed Bilal S',
+                      style: TextStyle(
+                          color: AppColors.colorred,
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Wrap(spacing: 5, children: [
+                      const TextContainer(
+                        text: 'Flutter Developer',
+                        image: 'assets/images/flutter.png',
+                      ),
+                      sbox20,
+                      const TextContainer(
+                        text: 'UI Designer',
+                        image: 'assets/images/figma.png',
+                      ),
+                    ]),
+                    sbox20,
+                    SizedBox(
+                      width: 80.w,
+                      child: const Text(
+                        'Built with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data base',
+                        style: TextStyle(color: AppColors.colorwhite),
+                        overflow: TextOverflow.clip,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
