@@ -4,18 +4,47 @@ import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart';
 
-class MobileDashboard extends StatelessWidget {
+class MobileDashboard extends StatefulWidget {
   const MobileDashboard({super.key});
+
+  @override
+  State<MobileDashboard> createState() => _MobileDashboardState();
+}
+
+class _MobileDashboardState extends State<MobileDashboard> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       backgroundColor: AppColors.colorblack,
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              if (scaffoldKey.currentState!.isDrawerOpen) {
+                scaffoldKey.currentState!.closeDrawer();
+                //close drawer, if drawer is open
+              } else {
+                scaffoldKey.currentState!.openDrawer();
+                //open drawer, if drawer is closed
+              }
+            },
+            icon: const Icon(
+              Icons.menu,
+              color: AppColors.colorwhite,
+            )),
+        actionsIconTheme: const IconThemeData(color: AppColors.colorwhite),
+        backgroundColor: AppColors.colorblack,
         centerTitle: true,
-        title: const Text('Muhammed bilal S'),
+        title: const Text(
+          'Muhammed bilal S',
+          style: TextStyle(color: AppColors.colorwhite),
+        ),
       ),
-      drawer: const Drawer(),
+      drawer: const Drawer(
+        backgroundColor: AppColors.bggray,
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -64,6 +93,7 @@ class MobileDashboard extends StatelessWidget {
               ],
             ),
           ),
+          
         ],
       ),
     );

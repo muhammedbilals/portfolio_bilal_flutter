@@ -22,7 +22,7 @@ class SocialMediaIcons extends StatelessWidget {
             width: 20,
             child: Image.asset(
               image,
-              fit: BoxFit.cover,
+              fit: BoxFit.contain,
             ).translateOnHover,
           ),
         ),
