@@ -78,6 +78,10 @@ class _MobileDashboardState extends State<MobileDashboard> {
                         text: 'UI Designer',
                         image: 'assets/images/figma.png',
                       ),
+                      const TextContainer(
+                        text: 'UI Designer',
+                        image: 'assets/images/figma.png',
+                      ),
                     ]),
                     sbox20,
                     SizedBox(
