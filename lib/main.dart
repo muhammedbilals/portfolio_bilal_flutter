@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/presentation/controllers/menu_controller.dart';
+import 'package:portfolio_bilal_flutter/presentation/screens/dashboard/desktop/cubit/nav_bar_cubit.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/gestures.dart';
@@ -37,7 +39,10 @@ class MyApp extends StatelessWidget {
           fontFamily: GoogleFonts.poppins().fontFamily,
           primarySwatch: Colors.blue,
         ),
-        home: const Home(),
+        home: BlocProvider(
+          create: (context) => NavBarCubit(),
+          child: const Home(),
+        ),
       ),
     );
   }

@@ -57,6 +57,7 @@ class _DesktopDashboardState extends State<DesktopDashboard> {
         backgroundColor: AppColors.colorblack,
         title: Header(
           onTap: (int index) {
+            // print(index);
             context.read<NavBarCubit>().changeSelectedIndex(index);
             pageController.animateToPage(index,
                 duration: const Duration(microseconds: 10),
@@ -91,6 +92,5 @@ class _DesktopDashboardState extends State<DesktopDashboard> {
     );
   }
 
-
-  var colors = [Colors.orange, Colors.blue, Colors.red, Colors.green];
+  // var colors = [Colors.orange, Colors.blue, Colors.red, Colors.green];
 }

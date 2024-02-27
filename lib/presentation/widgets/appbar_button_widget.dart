@@ -20,6 +20,8 @@ class AppbarButtonWidget extends StatelessWidget {
     return HoverBuilder(
       builder: (isHovered) {
         return InkWell(
+          borderRadius: BorderRadius.circular(12),
+          
           onTap: () => onTap!(),
           child: Container(
             color: selected ? AppColors.colorgrey : null,
