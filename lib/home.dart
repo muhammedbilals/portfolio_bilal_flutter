@@ -13,16 +13,19 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  
   @override
   Widget build(BuildContext context) {
     final sideMenuController = Provider.of<SideMenuController>(context);
 
     return Scaffold(
-        key: sideMenuController.scaffoldKey,
-        drawer: const SideMenu(),
-        body: const SafeArea(
-          child: Expanded(flex: 5, child: Dashboard()),
-        ));
+      key: sideMenuController.scaffoldKey,
+      drawer: const SideMenu(),
+      body: const SafeArea(
+        child: Expanded(
+          flex: 5,
+          child: Dashboard(),
+        ),
+      ),
+    );
   }
 }

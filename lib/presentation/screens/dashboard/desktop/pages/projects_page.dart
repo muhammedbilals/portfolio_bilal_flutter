@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
 import 'package:portfolio_bilal_flutter/presentation/utils/hover_effect_extention.dart';
@@ -12,7 +13,7 @@ class ProjectsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: double.maxFinite,
+      height: 100.h,
       child: Padding(
         padding: const EdgeInsets.all(100.0),
         child: Column(
@@ -36,14 +37,12 @@ class ProjectsPage extends StatelessWidget {
             ),
             sbox20,
             SizedBox(
-              height: 800,
+              height: 550,
               child: ListView.builder(
-                scrollDirection: Axis
-                    .horizontal, 
+                scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
                 itemCount: 6,
                 itemBuilder: (context, index) {
-             
                   return const ProjectCard().translateOnHover;
                 },
               ),

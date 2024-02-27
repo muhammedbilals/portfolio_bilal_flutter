@@ -31,17 +31,17 @@ class Header extends StatelessWidget {
           ),
         if (!Responsive.isMobile(context) && !Responsive.isTablet(context))
           Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                4,
-                (index) {
-                  return AppbarButtonWidget(
-                    
-                    onTap: () => onTap!(index),
-                    title: titile[index],
-                  );
-                },
-              ))
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(
+              4,
+              (index) {
+                return AppbarButtonWidget(
+                  onTap: () => onTap!(index),
+                  title: titile[index],
+                );
+              },
+            ),
+          )
       ],
     );
   }

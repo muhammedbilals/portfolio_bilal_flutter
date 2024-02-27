@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
 import 'package:portfolio_bilal_flutter/core/helpers/url_laucher.dart';
+import 'package:portfolio_bilal_flutter/presentation/screens/dashboard/desktop/cubit/nav_bar_cubit.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/appbar_button_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/header.dart';
-import 'package:portfolio_bilal_flutter/presentation/widgets/pages/experties_page.dart';
-import 'package:portfolio_bilal_flutter/presentation/widgets/pages/home_page.dart';
-import 'package:portfolio_bilal_flutter/presentation/widgets/pages/projects_page.dart';
+import 'package:portfolio_bilal_flutter/presentation/screens/dashboard/desktop/pages/experties_page.dart';
+import 'package:portfolio_bilal_flutter/presentation/screens/dashboard/desktop/pages/home_page.dart';
+import 'package:portfolio_bilal_flutter/presentation/screens/dashboard/desktop/pages/projects_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/social_media_icon.dart';
 
 // ignore: must_be_immutable
@@ -18,10 +20,29 @@ class DesktopDashboard extends StatefulWidget {
 }
 
 class _DesktopDashboardState extends State<DesktopDashboard> {
-  final homeKey = GlobalKey();
-  final projectsKey = GlobalKey();
-  final expertiesKey = GlobalKey();
-  final aboutKey = GlobalKey();
+  late PageController pageController;
+
+  @override
+  void initState() {
+    pageController = PageController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
+
+  List<Widget> pages = [
+    const HomePage(),
+    const ProjectsPage(),
+    const ExpertiesPage(),
+    const HomePage()
+  ];
+  void onPageChanged(int page) {
+    BlocProvider.of<NavBarCubit>(context).changeSelectedIndex(page);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +57,10 @@ class _DesktopDashboardState extends State<DesktopDashboard> {
         backgroundColor: AppColors.colorblack,
         title: Header(
           onTap: (int index) {
-            if (index == 0) {
-              Scrollable.ensureVisible(homeKey.currentContext!);
-            } else if (index == 1) {
-              Scrollable.ensureVisible(projectsKey.currentContext!);
-            } else if (index == 2) {
-              Scrollable.ensureVisible(expertiesKey.currentContext!);
-            } else if (index == 3) {
-              Scrollable.ensureVisible(aboutKey.currentContext!);
-            }
+            context.read<NavBarCubit>().changeSelectedIndex(index);
+            pageController.animateToPage(index,
+                duration: const Duration(microseconds: 10),
+                curve: Curves.fastLinearToSlowEaseIn);
           },
         ),
         actions: [
@@ -66,22 +82,15 @@ class _DesktopDashboardState extends State<DesktopDashboard> {
           sboxW,
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            HomePage(key: homeKey),
-            ProjectsPage(key: projectsKey),
-            ExpertiesPage(key: expertiesKey),
-            HomePage(key: aboutKey),
-          ],
-        ),
+      body: PageView(
+        scrollDirection: Axis.vertical,
+        controller: pageController,
+        onPageChanged: (value) => onPageChanged(value),
+        children: pages,
       ),
     );
   }
 
-  var list = ["Home", "Services", "Work", "About"];
 
   var colors = [Colors.orange, Colors.blue, Colors.red, Colors.green];
 }
