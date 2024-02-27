@@ -13,14 +13,15 @@ class AppBarDeskTop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: List.generate(
-          4,
-          (index) {
-            return AppbarButtonWidget(
-              title: titile[index],
-            );
-          },
-        ));
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: List.generate(
+        4,
+        (index) {
+          return AppbarButtonWidget(
+            title: titile[index],
+          );
+        },
+      ),
+    );
   }
 }
