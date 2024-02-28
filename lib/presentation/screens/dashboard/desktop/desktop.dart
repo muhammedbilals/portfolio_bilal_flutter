@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
@@ -27,18 +26,18 @@ class _DesktopDashboardState extends State<DesktopDashboard> {
   @override
   void initState() {
     pageController = PageController();
-    pageController.addListener(() {
-      if (pageController.position.userScrollDirection ==
-          ScrollDirection.reverse) {
-        pageController.nextPage(
-            duration: const Duration(milliseconds: 60),
-            curve: Curves.bounceInOut);
-      } else if (pageController.position.userScrollDirection ==
-          ScrollDirection.forward) {
-        pageController.previousPage(
-            duration: const Duration(milliseconds: 60), curve: Curves.bounceIn);
-      }
-    });
+    // pageController.addListener(() {
+    //   if (pageController.position.userScrollDirection ==
+    //       ScrollDirection.reverse) {
+    //     pageController.nextPage(
+    //         duration: const Duration(milliseconds: 60),
+    //         curve: Curves.bounceInOut);
+    //   } else if (pageController.position.userScrollDirection ==
+    //       ScrollDirection.forward) {
+    //     pageController.previousPage(
+    //         duration: const Duration(milliseconds: 60), curve: Curves.bounceIn);
+    //   }
+    // });
     super.initState();
   }
 
