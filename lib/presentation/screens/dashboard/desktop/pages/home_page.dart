@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
 import 'package:portfolio_bilal_flutter/presentation/utils/hover_effect_extention.dart';
@@ -55,9 +56,9 @@ class HomePage extends StatelessWidget {
                             ),
                           ]),
                           sbox20,
-                          const SizedBox(
-                            width: 500,
-                            child: Text(
+                          SizedBox(
+                            width: 50.w,
+                            child: const Text(
                               'Built with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data base',
                               style: TextStyle(color: AppColors.colorwhite),
                               overflow: TextOverflow.clip,
