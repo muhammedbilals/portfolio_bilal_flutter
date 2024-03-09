@@ -9,8 +9,6 @@ import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/gestures.dart';
 
-import 'home.dart';
-
 void main() {
   runApp(MultiProvider(
     providers: [ChangeNotifierProvider(create: (_) => SideMenuController())],
