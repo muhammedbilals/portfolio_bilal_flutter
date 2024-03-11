@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
+import 'package:portfolio_bilal_flutter/presentation/widgets/button_widget.dart';
 
 import 'package:portfolio_bilal_flutter/presentation/widgets/textfield_widget.dart';
 
@@ -54,7 +55,7 @@ class ContactPage extends StatelessWidget {
                     fillColor: Colors.grey[200],
                     hintText: 'Email',
                     hintTextColor: Colors.grey[400],
-                    prefixIcon: Icons.person,
+                    prefixIcon: Icons.email_outlined,
                   ),
                 ],
               ),
@@ -64,15 +65,14 @@ class ContactPage extends StatelessWidget {
                     fillColor: Colors.grey[200],
                     hintText: 'Message',
                     hintTextColor: Colors.grey[400],
-                    prefixIcon: Icons.person,
+                    prefixIcon: Icons.message_outlined,
                   ),
                   const Spacer(),
-                  TextFieldWidget(
-                    fillColor: Colors.grey[200],
-                    hintText: 'Enter username',
-                    hintTextColor: Colors.grey[400],
-                    prefixIcon: Icons.person,
-                  ),
+                  ButtonWidget(
+                      text: 'Submit',
+                      width: 40.w,
+                      buttonColor: AppColors.colorred,
+                      textColor: AppColors.colorwhite)
                 ],
               )
             ],

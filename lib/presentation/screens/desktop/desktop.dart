@@ -48,10 +48,10 @@ class _DesktopDashboardState extends State<DesktopDashboard> {
   }
 
   List<Widget> pages = [
+    const ContactPage(),
     const ExpertiesPage(),
     const HomePage(),
     const ProjectsPage(),
-    const ContactPage()
   ];
   void onPageChanged(int page) {
     BlocProvider.of<NavBarCubit>(context).changeSelectedIndex(page);
