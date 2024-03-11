@@ -2,6 +2,7 @@ import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
+import 'package:portfolio_bilal_flutter/presentation/widgets/experties_list_widget.dart';
 
 class ExpertiesPage extends StatefulWidget {
   const ExpertiesPage({
@@ -112,14 +113,13 @@ class _ExpertiesPageState extends State<ExpertiesPage>
                 body: TabBarView(
                     physics: const BouncingScrollPhysics(),
                     controller: _tabController,
-                    children: const [
-                      Text('data',
+                    children: [
+                      ExpertiesListWidget(),
+                      const Text('data',
                           style: TextStyle(color: AppColors.colorwhite)),
-                      Text('data',
+                      const Text('data',
                           style: TextStyle(color: AppColors.colorwhite)),
-                      Text('data',
-                          style: TextStyle(color: AppColors.colorwhite)),
-                      Text('data',
+                      const Text('data',
                           style: TextStyle(color: AppColors.colorwhite))
                     ]),
               ),

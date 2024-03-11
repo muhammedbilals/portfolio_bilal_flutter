@@ -1,0 +1,44 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
+import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart';
+
+class ExpertiesListWidget extends StatelessWidget {
+  ExpertiesListWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MasonryGridView.count(
+      scrollDirection: Axis.horizontal,
+      physics: const NeverScrollableScrollPhysics(),
+      crossAxisCount: 4,
+      mainAxisSpacing: 4,
+      crossAxisSpacing: 4,
+      itemCount: list.length,
+      itemBuilder: (context, index) {
+        return list[index];
+      },
+    );
+  }
+
+  List<TextContainer> list = [
+    const TextContainer(
+        text: 'Flutter Developers', image: 'assets/images/flutter.png'),
+    const TextContainer(
+        text: 'Flutter Developer', image: 'assets/images/flutter.png'),
+    const TextContainer(text: 'Flutter ', image: 'assets/images/flutter.png'),
+    const TextContainer(
+        text: 'Flutter Developer', image: 'assets/images/flutter.png'),
+    const TextContainer(
+        text: 'Flutter Developer', image: 'assets/images/flutter.png'),
+    const TextContainer(
+        text: 'Flutter Developers', image: 'assets/images/flutter.png'),
+    const TextContainer(
+        text: 'Flutter Developer', image: 'assets/images/flutter.png'),
+    const TextContainer(text: 'Flutter ', image: 'assets/images/flutter.png'),
+    const TextContainer(
+        text: 'Flutter Developer', image: 'assets/images/flutter.png'),
+    const TextContainer(
+        text: 'Flutter Developer', image: 'assets/images/flutter.png')
+  ];
+}
