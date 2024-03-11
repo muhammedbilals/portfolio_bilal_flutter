@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_bilal_flutter/presentation/screens/dashboard/desktop/desktop.dart';
-import 'package:portfolio_bilal_flutter/presentation/screens/dashboard/mobile/mobile.dart';
-import 'package:portfolio_bilal_flutter/presentation/screens/dashboard/tablet/tablet.dart';
-import 'package:portfolio_bilal_flutter/presentation/widgets/responsive.dart';
+import 'package:portfolio_bilal_flutter/presentation/screens/desktop/desktop.dart';
+import 'package:portfolio_bilal_flutter/presentation/screens/mobile/mobile.dart';
+import 'package:portfolio_bilal_flutter/presentation/screens/tablet/tablet.dart';
+import 'package:portfolio_bilal_flutter/presentation/utils/responsive.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});

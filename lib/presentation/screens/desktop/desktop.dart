@@ -3,24 +3,24 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
 import 'package:portfolio_bilal_flutter/core/helpers/url_laucher.dart';
-import 'package:portfolio_bilal_flutter/presentation/screens/dashboard/desktop/cubit/nav_bar_cubit.dart';
-import 'package:portfolio_bilal_flutter/presentation/screens/dashboard/desktop/pages/contact_page.dart';
+import 'package:portfolio_bilal_flutter/presentation/cubits/nav_bar/nav_bar_cubit.dart';
+import 'package:portfolio_bilal_flutter/presentation/screens/desktop/pages/contact_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/appbar_button_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/header.dart';
-import 'package:portfolio_bilal_flutter/presentation/screens/dashboard/desktop/pages/experties_page.dart';
-import 'package:portfolio_bilal_flutter/presentation/screens/dashboard/desktop/pages/home_page.dart';
-import 'package:portfolio_bilal_flutter/presentation/screens/dashboard/desktop/pages/projects_page.dart';
+import 'package:portfolio_bilal_flutter/presentation/screens/desktop/pages/experties_page.dart';
+import 'package:portfolio_bilal_flutter/presentation/screens/desktop/pages/home_page.dart';
+import 'package:portfolio_bilal_flutter/presentation/screens/desktop/pages/projects_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/social_media_icon.dart';
 
 // ignore: must_be_immutable
-class TabletDashboard extends StatefulWidget {
-  const TabletDashboard({super.key});
+class DesktopDashboard extends StatefulWidget {
+  const DesktopDashboard({super.key});
 
   @override
-  State<TabletDashboard> createState() => TabletDashboardState();
+  State<DesktopDashboard> createState() => _DesktopDashboardState();
 }
 
-class TabletDashboardState extends State<TabletDashboard> {
+class _DesktopDashboardState extends State<DesktopDashboard> {
   late PageController pageController;
 
   @override
