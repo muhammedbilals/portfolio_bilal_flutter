@@ -58,7 +58,7 @@ class _ExpertiesPageState extends State<ExpertiesPage>
                     SliverAppBar(
                       pinned: true,
                       elevation: 0,
-                      toolbarHeight: 100,
+                      toolbarHeight: 75,
                       backgroundColor: AppColors.colorblack,
                       bottom: const PreferredSize(
                           preferredSize: Size.fromHeight(0),

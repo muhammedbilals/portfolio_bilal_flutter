@@ -9,11 +9,11 @@ class TextContainer extends StatelessWidget {
   final String text;
   final String image;
   final double? width;
+  
   @override
   Widget build(BuildContext context) {
     return HoverBuilder(
         builder: (isHovered) => Container(
-              height: 20,
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
               decoration: BoxDecoration(
                   color: isHovered
