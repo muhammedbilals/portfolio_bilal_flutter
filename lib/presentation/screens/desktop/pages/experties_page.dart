@@ -1,5 +1,6 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/experties_list_widget.dart';
@@ -114,7 +115,7 @@ class _ExpertiesPageState extends State<ExpertiesPage>
                     physics: const BouncingScrollPhysics(),
                     controller: _tabController,
                     children: [
-                      ExpertiesListWidget(),
+                      ExpertiesListWidget(crossAxisCount: 3, height: 10.h),
                       const Text('data',
                           style: TextStyle(color: AppColors.colorwhite)),
                       const Text('data',

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sizer/flutter_sizer.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/button_widget.dart';
-import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart';
+import 'package:portfolio_bilal_flutter/presentation/widgets/experties_list_widget.dart';
+import 'package:portfolio_bilal_flutter/presentation/widgets/project_keyword_widget.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({
@@ -17,8 +20,8 @@ class ProjectCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 500,
-            width: 400,
+            height: 60.h,
+            width: 25.w,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 color: AppColors.colorgrey),
@@ -45,31 +48,47 @@ class ProjectCard extends StatelessWidget {
                       const Text(
                         "Jazz music player",
                         style: TextStyle(
-                            color: AppColors.colorwhite, fontSize: 18),
+                            color: AppColors.colorwhite, fontSize: 16),
                       ),
                       sbox,
                       Text(
                         "Built with flutter and local data as-built with flutter and local data base",
                         style: TextStyle(
                             color: AppColors.colorwhite.withOpacity(0.5),
-                            fontSize: 14),
+                            fontSize: 12),
                       ),
-                      sbox,
-                      const Wrap(spacing: 5, children: [
-                        TextContainer(
-                            width: 130,
-                            text: 'Flutter',
-                            image: 'assets/images/flutter.png'),
-                        TextContainer(
-                            width: 130,
-                            text: 'Flutter',
-                            image: 'assets/images/flutter.png'),
-                      ]),
+                      // const Wrap(children: [
+                      //   ProjectKeywordWidget(
+                      //       text: 'text', image: 'assets/images/linkedin.png'),
+                      // ]),
+                      // const ProjectKeywordWidget(
+                      //     text: 'text', image: 'assets/images/linkedin.png'),
+
+                      // SizedBox(
+                      //   height: 10.h,
+                      //   child: MasonryGridView.count(
+                      //     crossAxisCount: 2,
+                      //     mainAxisSpacing: 4,
+                      //     crossAxisSpacing: 4,
+                      //     itemBuilder: (context, index) {
+                      //       return const Column(
+                      //         children: [
+                      //           ProjectKeywordWidget(
+                      //               text: 'text',
+                      //               image: 'assets/images/linkedin.png'),
+                      //         ],
+                      //       );
+                      //     },
+                      //   ),
+                      // ),
+
+                      // ExpertiesListWidget(
+                      //   height: 10.h,
+                      //   crossAxisCount: 1,
+                      // ),
                       sbox20,
                       sbox20,
-                      sbox20,
-                      sbox20,
-                      const Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           ButtonWidget(
@@ -77,13 +96,13 @@ class ProjectCard extends StatelessWidget {
                               buttonColor: AppColors.colorred,
                               text: 'GitHub',
                               image: 'assets/images/github.png',
-                              width: 185),
+                              width: 11.5.w),
                           ButtonWidget(
                               textColor: AppColors.colorblack,
                               buttonColor: AppColors.colorwhite,
                               text: 'Youtube',
                               image: 'assets/images/youtube.png',
-                              width: 185),
+                              width: 11.5.w),
                         ],
                       )
                     ],

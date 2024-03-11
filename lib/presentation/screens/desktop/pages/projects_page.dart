@@ -15,10 +15,13 @@ class ProjectsPage extends StatelessWidget {
     return SizedBox(
       height: 100.h,
       child: Padding(
-        padding: const EdgeInsets.all(100.0),
+        padding: const EdgeInsets.symmetric(horizontal: 100.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            sbox20,
+            sbox20,
             const Padding(
               padding: EdgeInsets.only(left: 15.0),
               child: Text(
@@ -35,9 +38,8 @@ class ProjectsPage extends StatelessWidget {
                     color: AppColors.colorwhite.withOpacity(0.5), fontSize: 16),
               ),
             ),
-            sbox20,
             SizedBox(
-              height: 550,
+              height: 65.h,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
