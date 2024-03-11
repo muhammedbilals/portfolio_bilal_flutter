@@ -48,9 +48,9 @@ class _DesktopDashboardState extends State<DesktopDashboard> {
   }
 
   List<Widget> pages = [
+    const ExpertiesPage(),
     const HomePage(),
     const ProjectsPage(),
-    const ExpertiesPage(),
     const ContactPage()
   ];
   void onPageChanged(int page) {
