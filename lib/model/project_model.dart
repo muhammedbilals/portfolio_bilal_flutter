@@ -16,31 +16,29 @@ class ProjectModel {
     required this.projectCoverImage,
   });
 
-  factory ProjectModel.fromFirestore(DocumentSnapshot doc) {
-    Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
-
+  factory ProjectModel.fromJson(Map<String, dynamic> json) {
     List<LogoData> keywords = [];
-    if (data['projectKeywords'] != null) {
-      var list = data['projectKeywords'] as List;
+    if (json['projectKeywords'] != null) {
+      var list = json['projectKeywords'] as List;
       keywords = list.map((item) => LogoData.fromJson(item)).toList();
     }
 
     List<LogoData> links = [];
-    if (data['projectLinks'] != null) {
-      var list = data['projectLinks'] as List;
+    if (json['projectLinks'] != null) {
+      var list = json['projectLinks'] as List;
       links = list.map((item) => LogoData.fromJson(item)).toList();
     }
 
     return ProjectModel(
-      projectName: data['projectName'],
-      projectSubtitle: data['projectSubtitle'],
+      projectName: json['projectName'],
+      projectSubtitle: json['projectSubtitle'],
       projectKeywords: keywords,
       projectLinks: links,
-      projectCoverImage: data['projectCoverImage'],
+      projectCoverImage: json['projectCoverImage'],
     );
   }
 
-  Map<String, dynamic> toFirestore() {
+  Map<String, dynamic> toJson() {
     return {
       'projectName': projectName,
       'projectSubtitle': projectSubtitle,
@@ -48,5 +46,14 @@ class ProjectModel {
       'projectLinks': projectLinks.map((link) => link.toJson()).toList(),
       'projectCoverImage': projectCoverImage,
     };
+  }
+
+  factory ProjectModel.fromFirestore(DocumentSnapshot doc) {
+    Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+    return ProjectModel.fromJson(data);
+  }
+
+  Map<String, dynamic> toFirestore() {
+    return toJson();
   }
 }
