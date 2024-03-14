@@ -17,4 +17,5 @@ class FirestoreService {
   Stream<QuerySnapshot> getProjects() {
     return _reference.snapshots();
   }
+  
 }
