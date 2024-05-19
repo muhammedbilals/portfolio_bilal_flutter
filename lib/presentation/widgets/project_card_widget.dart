@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/button_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/experties_list_widget.dart';
-import 'package:portfolio_bilal_flutter/presentation/widgets/project_keyword_widget.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({
@@ -82,10 +80,10 @@ class ProjectCard extends StatelessWidget {
                       //   ),
                       // ),
 
-                      // ExpertiesListWidget(
-                      //   height: 10.h,
-                      //   crossAxisCount: 1,
-                      // ),
+                      ExpertiesListWidget(
+                        height: 7.h,
+                        crossAxisCount: 1,
+                      ),
                       sbox20,
                       sbox20,
                       Row(

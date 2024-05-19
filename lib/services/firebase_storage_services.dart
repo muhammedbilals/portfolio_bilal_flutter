@@ -1,14 +1,13 @@
-// getAvatarUrlForProfile(String imageFileName) async {
-// final FirebaseStorage firebaseStorage = FirebaseStorage(
-//     app: Firestore.instance.app,
-//     storageBucket: 'gs://your-firebase-app-url.com');
+import 'dart:async';
 
-// Uint8List imageBytes;
-// await firebaseStorage
-//     .ref()
-//     .child(imageFileName)
-//     .getData(100000000)
-//     .then((value) => {imageBytes = value})
-//     .catchError((error) => {});
-// return imageBytes;
-// }
+import 'package:firebase_storage/firebase_storage.dart';
+
+class FirebaseStorageService {
+  Future<String>  getImages(String imageFileName) async {
+final ref = FirebaseStorage.instance.ref().child(imageFileName);
+
+var url = await ref.getDownloadURL();
+print(url);
+return url;
+}
+}
