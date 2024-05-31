@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
@@ -15,7 +17,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 100.h,
-      width: double.maxFinite,
+      width: 100.w,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -54,12 +56,14 @@ class HomePage extends StatelessWidget {
                           ),
                         ]),
                         sbox20,
-                        SizedBox(
-                          width: 50.w,
-                          child: const Text(
-                            'Built with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data base',
-                            style: TextStyle(color: AppColors.colorwhite),
-                            overflow: TextOverflow.clip,
+                        Placeholder(
+                          child: SizedBox(
+                            width: 30.w,
+                            child: const Text(
+                              'Built with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data base',
+                              style: TextStyle(color: AppColors.colorwhite),
+                              overflow: TextOverflow.clip,
+                            ),
                           ),
                         ),
                       ],
@@ -109,18 +113,21 @@ class HomePage extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.all(100),
-            child: Row(
-              children: [
-                SizedBox(
-                        // height: 300,
-                        // width: 300,
-                        child: ClipRRect(
-                            borderRadius: BorderRadius.circular(50),
-                            child: Image.network(
-                                'https://avatars.githubusercontent.com/u/97529912?v=4')))
-                    .translateOnHover
-              ],
+            padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 70),
+            child: Container(
+              constraints: const BoxConstraints(
+                minHeight: 100,
+                minWidth: 100,
+                maxHeight: 400, // Set your desired max height here
+                maxWidth: 400, // Set your desired max width here
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: Image.network(
+                  'https://avatars.githubusercontent.com/u/97529912?v=4',
+                  fit: BoxFit.cover,
+                ),
+              ).translateOnHover,
             ),
           ),
         ],

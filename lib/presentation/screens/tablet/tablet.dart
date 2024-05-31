@@ -50,8 +50,8 @@ class TabletDashboardState extends State<TabletDashboard> {
   List<Widget> pages = [
     const HomePage(),
     const ProjectsPage(),
-    const ExpertiesPage(),
-    const ContactPage()
+    // const ExpertiesPage(),
+    // const ContactPage()
   ];
   void onPageChanged(int page) {
     BlocProvider.of<NavBarCubit>(context).changeSelectedIndex(page);
