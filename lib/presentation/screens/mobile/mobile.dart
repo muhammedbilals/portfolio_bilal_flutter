@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sizer/flutter_sizer.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
-import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
-import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart';
+import 'package:portfolio_bilal_flutter/presentation/screens/mobile/pages/mobile_experties_page.dart';
+import 'package:portfolio_bilal_flutter/presentation/screens/mobile/pages/mobile_home_page.dart';
+
+import '../../cubits/nav_bar/nav_bar_cubit.dart';
 
 class MobileDashboard extends StatefulWidget {
   const MobileDashboard({super.key});
@@ -13,6 +15,43 @@ class MobileDashboard extends StatefulWidget {
 
 class _MobileDashboardState extends State<MobileDashboard> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  late PageController pageController;
+
+  @override
+  void initState() {
+    pageController = PageController();
+    // pageController.addListener(() {
+    //   if (pageController.position.userScrollDirection ==
+    //       ScrollDirection.reverse) {
+    //     pageController.nextPage(
+    //         duration: const Duration(milliseconds: 60),
+    //         curve: Curves.bounceInOut);
+    //   } else if (pageController.position.userScrollDirection ==
+    //       ScrollDirection.forward) {
+    //     pageController.previousPage(
+    //         duration: const Duration(milliseconds: 60), curve: Curves.bounceIn);
+    //   }
+    // });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
+
+  List<Widget> pages = [
+    const MobiletHomePage(),
+    const MobileExpertiesPage(),
+    // const ExpertiesPage(),
+    // const ContactPage()
+  ];
+  void onPageChanged(int page) {
+    BlocProvider.of<NavBarCubit>(context).changeSelectedIndex(page);
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -45,60 +84,11 @@ class _MobileDashboardState extends State<MobileDashboard> {
       drawer: const Drawer(
         backgroundColor: AppColors.bggray,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      "Hi, everyone! I'm",
-                      style:
-                          TextStyle(color: AppColors.colorwhite, fontSize: 25),
-                    ),
-                    const Text(
-                      'Muhammed Bilal S',
-                      style: TextStyle(
-                          color: AppColors.colorred,
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Wrap(spacing: 5, children: [
-                      const TextContainer(
-                        text: 'Flutter Developer',
-                        image: 'assets/images/flutter.png',
-                      ),
-                      sbox20,
-                      const TextContainer(
-                        text: 'UI Designer',
-                        image: 'assets/images/figma.png',
-                      ),
-                      const TextContainer(
-                        text: 'UI Designer',
-                        image: 'assets/images/figma.png',
-                      ),
-                    ]),
-                    sbox20,
-                    SizedBox(
-                      width: 80.w,
-                      child: const Text(
-                        'Built with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data base',
-                        style: TextStyle(color: AppColors.colorwhite),
-                        overflow: TextOverflow.clip,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          
-        ],
+       body: PageView(
+        scrollDirection: Axis.vertical,
+        controller: pageController,
+        onPageChanged: (value) => onPageChanged(value),
+        children: pages,
       ),
     );
   }

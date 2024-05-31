@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/button_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart';
 
-class TabletHomePage extends StatelessWidget {
-  const TabletHomePage({
+class MobiletHomePage extends StatelessWidget {
+  const MobiletHomePage({
     super.key,
   });
 
@@ -23,8 +24,9 @@ class TabletHomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 100),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,6 +36,7 @@ class TabletHomePage extends StatelessWidget {
                           style: TextStyle(
                               color: AppColors.colorwhite, fontSize: 25),
                         ),
+                        sbox,
                         const Text(
                           'Muhammed Bilal S',
                           style: TextStyle(
@@ -41,6 +44,7 @@ class TabletHomePage extends StatelessWidget {
                               fontSize: 40,
                               fontWeight: FontWeight.bold),
                         ),
+                        sbox,
                         Wrap(
                           spacing: 5,
                           children: [
@@ -57,7 +61,7 @@ class TabletHomePage extends StatelessWidget {
                         ),
                         sbox20,
                         SizedBox(
-                          width: 50.w,
+                          width: 80.w,
                           child: const Text(
                             'Built with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data base',
                             style: TextStyle(color: AppColors.colorwhite),
@@ -71,7 +75,7 @@ class TabletHomePage extends StatelessWidget {
               ),
               sbox20,
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 100),
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Wrap(spacing: 15, children: [
                   ButtonWidget(
                       textColor: AppColors.colorwhite,
