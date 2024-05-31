@@ -6,8 +6,8 @@ import 'package:portfolio_bilal_flutter/presentation/utils/hover_effect_extentio
 import 'package:portfolio_bilal_flutter/presentation/widgets/button_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart';
 
-class DeskTopHomePage extends StatelessWidget {
-  const DeskTopHomePage({
+class TabletHomePage extends StatelessWidget {
+  const TabletHomePage({
     super.key,
   });
 
@@ -112,22 +112,22 @@ class DeskTopHomePage extends StatelessWidget {
               // )
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 60),
-            child: Container(
-              constraints: const BoxConstraints(
-                maxHeight: 300,
-                maxWidth: 300,
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(50),
-                child: Image.network(
-                  'https://avatars.githubusercontent.com/u/97529912?v=4',
-                  fit: BoxFit.cover,
-                ),
-              ).translateOnHover,
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 60),
+          //   child: Container(
+          //     constraints: const BoxConstraints(
+          //       maxHeight: 250,
+          //       maxWidth: 250,
+          //     ),
+          //     child: ClipRRect(
+          //       borderRadius: BorderRadius.circular(50),
+          //       child: Image.network(
+          //         'https://avatars.githubusercontent.com/u/97529912?v=4',
+          //         fit: BoxFit.cover,
+          //       ),
+          //     ).translateOnHover,
+          //   ),
+          // ),
         ],
       ),
     );
