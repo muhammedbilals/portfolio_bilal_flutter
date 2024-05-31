@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
-import 'package:portfolio_bilal_flutter/presentation/utils/hover_effect_extention.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/button_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart';
 
-class DeskTopHomePage extends StatelessWidget {
-  const DeskTopHomePage({
+class TabletHomePage extends StatelessWidget {
+  const TabletHomePage({
     super.key,
   });
 
@@ -57,14 +56,12 @@ class DeskTopHomePage extends StatelessWidget {
                           ],
                         ),
                         sbox20,
-                        Placeholder(
-                          child: SizedBox(
-                            width: 35.w,
-                            child: const Text(
-                              'Built with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data base',
-                              style: TextStyle(color: AppColors.colorwhite),
-                              overflow: TextOverflow.clip,
-                            ),
+                        SizedBox(
+                          width: 50.w,
+                          child: const Text(
+                            'Built with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data base',
+                            style: TextStyle(color: AppColors.colorwhite),
+                            overflow: TextOverflow.clip,
                           ),
                         ),
                       ],
@@ -112,22 +109,22 @@ class DeskTopHomePage extends StatelessWidget {
               // )
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 60),
-            child: Container(
-              constraints: const BoxConstraints(
-                maxHeight: 300,
-                maxWidth: 300,
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(50),
-                child: Image.network(
-                  'https://avatars.githubusercontent.com/u/97529912?v=4',
-                  fit: BoxFit.cover,
-                ),
-              ).translateOnHover,
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 60),
+          //   child: Container(
+          //     constraints: const BoxConstraints(
+          //       maxHeight: 250,
+          //       maxWidth: 250,
+          //     ),
+          //     child: ClipRRect(
+          //       borderRadius: BorderRadius.circular(50),
+          //       child: Image.network(
+          //         'https://avatars.githubusercontent.com/u/97529912?v=4',
+          //         fit: BoxFit.cover,
+          //       ),
+          //     ).translateOnHover,
+          //   ),
+          // ),
         ],
       ),
     );

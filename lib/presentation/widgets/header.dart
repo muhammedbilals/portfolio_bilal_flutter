@@ -10,7 +10,9 @@ class Header extends StatelessWidget {
 
   final void Function(int index)? onTap;
 
-  List<String> titile = ['Home', 'Projects', 'Experties', 'About'];
+  List<String> titile = ['Home', 'Projects',
+  //  'Experties', 'About'
+   ];
   int isSelected = 0;
 
   @override
@@ -31,7 +33,8 @@ class Header extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(
-              4,
+              // 4,
+              2,
               (index) {
                 return AppbarButtonWidget(
                   onTap: () => onTap!(index),
