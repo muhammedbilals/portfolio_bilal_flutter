@@ -1,9 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
+import 'package:portfolio_bilal_flutter/presentation/utils/responsive.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/button_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/experties_list_widget.dart';
+import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({
@@ -18,19 +22,20 @@ class ProjectCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 60.h,
-            width: 25.w,
+            width: Responsive.isMobile(context)
+                ? 70.w
+                : Responsive.isTablet(context)
+                    ? 40.w
+                    : 25.w,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 color: AppColors.colorgrey),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 200,
-                  width: 400,
+                FittedBox(
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(30),
                     child: Image.asset(
                       'assets/images/mockup.png',
                       fit: BoxFit.cover,
@@ -84,6 +89,20 @@ class ProjectCard extends StatelessWidget {
                         height: 7.h,
                         crossAxisCount: 1,
                       ),
+                      // const FittedBox(
+                      //   fit: BoxFit.scaleDown,
+                      //   child: Wrap(children: [
+                      //     TextContainer(
+                      //         text: 'Flutter Developers',
+                      //         image: 'assets/images/flutter.png'),
+                      //     TextContainer(
+                      //         text: 'Flutter Developers',
+                      //         image: 'assets/images/flutter.png'),
+                      //     TextContainer(
+                      //         text: 'Flutter Developers',
+                      //         image: 'assets/images/flutter.png'),
+                      //   ]),
+                      // ),
                       sbox20,
                       sbox20,
                       Row(

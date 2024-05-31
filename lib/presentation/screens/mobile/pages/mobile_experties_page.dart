@@ -27,7 +27,7 @@ class _MobileExpertiesPageState extends State<MobileExpertiesPage>
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(100.0),
+      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[

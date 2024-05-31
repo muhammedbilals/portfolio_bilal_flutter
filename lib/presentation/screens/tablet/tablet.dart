@@ -4,6 +4,7 @@ import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
 import 'package:portfolio_bilal_flutter/core/helpers/url_laucher.dart';
 import 'package:portfolio_bilal_flutter/presentation/cubits/nav_bar/nav_bar_cubit.dart';
+import 'package:portfolio_bilal_flutter/presentation/screens/tablet/pages/tablet_projects_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/screens/tablet/pages/tablet_experties_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/appbar_button_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/header.dart';
@@ -48,8 +49,8 @@ class TabletDashboardState extends State<TabletDashboard> {
 
   List<Widget> pages = [
     const TabletHomePage(),
-    const TabletExpertiesPage(),
-    // const ExpertiesPage(),
+    // const TabletExpertiesPage(),
+    const TabletProjectsPage(),
     // const ContactPage()
   ];
   void onPageChanged(int page) {

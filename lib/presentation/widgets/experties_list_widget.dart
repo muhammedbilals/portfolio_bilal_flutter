@@ -13,15 +13,15 @@ class ExpertiesListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(0.0),
       child: SizedBox(
         height: height,
         child: MasonryGridView.count(
           scrollDirection: Axis.horizontal,
           physics: const NeverScrollableScrollPhysics(),
           crossAxisCount: crossAxisCount,
-          mainAxisSpacing: 4,
-          crossAxisSpacing: 4,
+          mainAxisSpacing: 1,
+          crossAxisSpacing: 1,
           itemCount: list.length,
           itemBuilder: (context, index) {
             return Padding(
