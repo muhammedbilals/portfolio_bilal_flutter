@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
+import 'package:portfolio_bilal_flutter/model/projects_data.dart';
 import 'package:portfolio_bilal_flutter/presentation/utils/hover_effect_extention.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/project_card_widget.dart';
 
@@ -41,11 +42,12 @@ class ProjectsPage extends StatelessWidget {
             SizedBox(
               height: 65.h,
               child: ListView.builder(
+
                 scrollDirection: Axis.horizontal,
-                shrinkWrap: true,
-                itemCount: 6,
+                shrinkWrap: false,
+                itemCount: projectData.length,
                 itemBuilder: (context, index) {
-                  return const ProjectCard().translateOnHover;
+                  return  ProjectCard(projects: projectData[index]).translateOnHover;
                 },
               ),
             ),

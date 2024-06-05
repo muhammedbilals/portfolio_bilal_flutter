@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
           },
         ),
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Muhammed Bilal',
         theme: ThemeData(
           primaryIconTheme: const IconThemeData(color: AppColors.colorwhite),
           fontFamily: GoogleFonts.poppins().fontFamily,

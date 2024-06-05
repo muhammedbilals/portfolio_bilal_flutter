@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class LogoData {
   final String logoName;
   final String logoUrl;
-  final String logoType;
+  final LogoType logoType;
 
   LogoData({
     required this.logoName,
@@ -15,7 +15,7 @@ class LogoData {
     return LogoData(
       logoName: json['logoName'],
       logoUrl: json['logoUrl'],
-      logoType: json['logoType'],
+      logoType: _parseLogoType(json['logoType']), 
     );
   }
 
@@ -23,14 +23,14 @@ class LogoData {
     return {
       'logoName': logoName,
       'logoUrl': logoUrl,
-      'logoType': logoType,
+      'logoType': logoType.toString(), 
     };
   }
 
   LogoData copyWith({
     String? logoName,
     String? logoUrl,
-    String? logoType,
+    LogoType? logoType, 
   }) {
     return LogoData(
       logoName: logoName ?? this.logoName,
@@ -45,8 +45,27 @@ class LogoData {
     return LogoData.fromJson(data);
   }
 
-  // Method to convert LogoData to a Map that can be stored in Firestore
   Map<String, dynamic> toDocument() {
     return toJson();
   }
+
+  
+  static LogoType _parseLogoType(String type) {
+    switch (type) {
+      case 'development':
+        return LogoType.development;
+      case 'tools':
+        return LogoType.tools;
+      case 'design':
+        return LogoType.design;
+      default:
+        throw ArgumentError('Unknown logo type: $type');
+    }
+  }
+}
+
+enum LogoType {
+  development,
+  tools,
+  design,
 }
