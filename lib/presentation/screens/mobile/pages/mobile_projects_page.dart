@@ -40,13 +40,15 @@ class MobileProjectsPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 65.h,
+              height: 70.h,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: false,
                 itemCount: projectData.length,
                 itemBuilder: (context, index) {
-                  return  ProjectCard(projects: projectData[index],).translateOnHover;
+                  return ProjectCard(
+                    projects: projectData[index],
+                  ).translateOnHover;
                 },
               ),
             ),

@@ -26,7 +26,7 @@ class ProjectCard extends StatelessWidget {
         children: [
           Container(
             width: Responsive.isMobile(context)
-                ? 70.w
+                ? 80.w
                 : Responsive.isTablet(context)
                     ? 40.w
                     : 25.w,
@@ -116,7 +116,7 @@ class ProjectCard extends StatelessWidget {
                               buttonColor: AppColors.colorred,
                               text: projects.projectLinks[0].logoName,
                               image: 'assets/images/github.png',
-                              width: 11.5.w),
+                              width: 12.5.w),
                           ButtonWidget(
                               textColor: AppColors.colorblack,
                               buttonColor: AppColors.colorwhite,
