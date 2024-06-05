@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:portfolio_bilal_flutter/model/logo_data_model.dart';
+import 'package:portfolio_bilal_flutter/model/logo_model.dart';
 
 class ProjectModel {
   final String projectName;

@@ -85,14 +85,17 @@ class _DesktopDashboardState extends State<DesktopDashboard> {
               launch('https://github.com/muhammedbilals', isNewTab: true);
             },
           ),
-          const SocialMediaIcons(
+          SocialMediaIcons(
             image: 'assets/images/linkedin.png',
+            onTap: () {
+              launch('https://www.linkedin.com/in/muhammedbilals/');
+            },
           ),
-          const SocialMediaIcons(
-            image: 'assets/images/x.png',
-          ),
-          const SocialMediaIcons(
+           SocialMediaIcons(
             image: 'assets/images/whatsapp.png',
+            onTap: () {
+              launch('https://wa.me/+919497705305');
+            },
           ),
           sboxW,
         ],

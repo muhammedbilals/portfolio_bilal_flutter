@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
+import 'package:portfolio_bilal_flutter/model/project_model.dart';
 import 'package:portfolio_bilal_flutter/presentation/utils/responsive.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/button_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/experties_list_widget.dart';
@@ -11,8 +12,9 @@ import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({
-    super.key,
+    super.key, required this.projects,
   });
+  final ProjectModel projects;
 
   @override
   Widget build(BuildContext context) {
@@ -48,14 +50,14 @@ class ProjectCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       sbox,
-                      const Text(
-                        "Jazz music player",
+                       Text(
+                        projects.projectName,
                         style: TextStyle(
                             color: AppColors.colorwhite, fontSize: 16),
                       ),
                       sbox,
                       Text(
-                        "Built with flutter and local data as-built with flutter and local data base",
+                        projects.projectSubtitle,
                         style: TextStyle(
                             color: AppColors.colorwhite.withOpacity(0.5),
                             fontSize: 12),
@@ -85,10 +87,10 @@ class ProjectCard extends StatelessWidget {
                       //   ),
                       // ),
 
-                      ExpertiesListWidget(
-                        height: 7.h,
-                        crossAxisCount: 1,
-                      ),
+                      // ExpertiesListWidget(
+                      //   height: 7.h,
+                      //   crossAxisCount: 1,
+                      // ),
                       // const FittedBox(
                       //   fit: BoxFit.scaleDown,
                       //   child: Wrap(children: [
@@ -111,13 +113,13 @@ class ProjectCard extends StatelessWidget {
                           ButtonWidget(
                               textColor: AppColors.colorwhite,
                               buttonColor: AppColors.colorred,
-                              text: 'GitHub',
+                              text: projects.projectLinks[0].logoName,
                               image: 'assets/images/github.png',
                               width: 11.5.w),
                           ButtonWidget(
                               textColor: AppColors.colorblack,
                               buttonColor: AppColors.colorwhite,
-                              text: 'Youtube',
+                              text: projects.projectLinks[1].logoName,
                               image: 'assets/images/youtube.png',
                               width: 11.5.w),
                         ],

@@ -5,6 +5,8 @@ import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
 import 'package:portfolio_bilal_flutter/presentation/utils/hover_effect_extention.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/button_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart';
+import 'dart:html' as html;
+
 
 class DeskTopHomePage extends StatelessWidget {
   const DeskTopHomePage({
@@ -73,7 +75,7 @@ class DeskTopHomePage extends StatelessWidget {
                 ),
               ),
               sbox20,
-              const Padding(
+               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 100),
                 child: Wrap(spacing: 15, children: [
                   ButtonWidget(
@@ -81,12 +83,19 @@ class DeskTopHomePage extends StatelessWidget {
                       buttonColor: AppColors.colorred,
                       icon: Icons.download_for_offline_rounded,
                       text: 'Download CV',
+                      onTap: () {
+                        
+                      },
                       width: 200),
                   ButtonWidget(
                       textColor: AppColors.colorwhite,
                       buttonColor: AppColors.colorred,
                       icon: Icons.mail,
                       text: 'Sent a Mail',
+                      onTap: () {
+                        html.window.open('mailto:bilalmsofficial@gmail.com',"");
+
+                      },
                       width: 200),
                 ]),
               )
