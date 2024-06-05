@@ -7,6 +7,8 @@ import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/button_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart';
 
+import 'dart:html' as html;
+
 class MobiletHomePage extends StatelessWidget {
   const MobiletHomePage({
     super.key,
@@ -75,7 +77,7 @@ class MobiletHomePage extends StatelessWidget {
                 ),
               ),
               sbox20,
-              const Padding(
+               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Wrap(spacing: 15, children: [
                   ButtonWidget(
@@ -89,6 +91,10 @@ class MobiletHomePage extends StatelessWidget {
                       buttonColor: AppColors.colorred,
                       icon: Icons.mail,
                       text: 'Sent a Mail',
+                      onTap: () {
+                         html.window
+                            .open('mailto:bilalmsofficial@gmail.com', "");
+                      },
                       width: 200),
                 ]),
               )
