@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
@@ -97,7 +97,7 @@ class MobiletHomePage extends StatelessWidget {
                       },
                       width: 200),
                 ]),
-              )
+              ),
               // Expanded(
               //   child: PageView(
               //       scrollDirection: Axis.vertical,

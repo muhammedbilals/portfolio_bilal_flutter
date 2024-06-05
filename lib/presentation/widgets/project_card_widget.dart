@@ -12,7 +12,8 @@ import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({
-    super.key, required this.projects,
+    super.key,
+    required this.projects,
   });
   final ProjectModel projects;
 
@@ -50,9 +51,9 @@ class ProjectCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       sbox,
-                       Text(
+                      Text(
                         projects.projectName,
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: AppColors.colorwhite, fontSize: 16),
                       ),
                       sbox,
