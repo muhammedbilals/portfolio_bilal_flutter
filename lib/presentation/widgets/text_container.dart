@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/presentation/utils/hover_effect_extention.dart';
 import 'package:portfolio_bilal_flutter/presentation/utils/hover_builder.dart';
+import 'package:portfolio_bilal_flutter/presentation/widgets/cached_image.dart';
 
 class TextContainer extends StatelessWidget {
   const TextContainer(
@@ -9,7 +10,7 @@ class TextContainer extends StatelessWidget {
   final String text;
   final String image;
   final double? width;
-  
+
   @override
   Widget build(BuildContext context) {
     return HoverBuilder(
@@ -22,13 +23,9 @@ class TextContainer extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15)),
               child: Row(
                 children: [
-                  SizedBox(
-                      height: 40,
-                      width: 40,
-                      child: Image.asset(
-                        image,
-                        fit: BoxFit.cover,
-                      )),
+                  const CustomImage(
+                    imageName: "flutter",
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 5.0),
                     child: Text(
