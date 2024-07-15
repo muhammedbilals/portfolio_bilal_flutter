@@ -5,10 +5,11 @@ import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
 import 'package:portfolio_bilal_flutter/core/helpers/url_laucher.dart';
 import 'package:portfolio_bilal_flutter/presentation/cubits/nav_bar/nav_bar_cubit.dart';
 import 'package:portfolio_bilal_flutter/presentation/screens/desktop/pages/contact_page.dart';
+import 'package:portfolio_bilal_flutter/presentation/screens/desktop/pages/home_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/appbar_button_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/header.dart';
-import 'package:portfolio_bilal_flutter/presentation/screens/desktop/pages/experties_page.dart';
-import 'package:portfolio_bilal_flutter/presentation/screens/desktop/pages/home_page.dart';
+import 'package:portfolio_bilal_flutter/presentation/screens/tablet/pages/tablet_experties_page.dart';
+import 'package:portfolio_bilal_flutter/presentation/screens/tablet/pages/tablet_home_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/screens/desktop/pages/projects_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/social_media_icon.dart';
 
@@ -48,10 +49,10 @@ class _DesktopDashboardState extends State<DesktopDashboard> {
   }
 
   List<Widget> pages = [
+    const DeskTopHomePage(),
     const ProjectsPage(),
-    const ContactPage(),
-    const ExpertiesPage(),
-    const HomePage(),
+    // const ContactPage(),
+    // const ExpertiesPage(),
   ];
   void onPageChanged(int page) {
     BlocProvider.of<NavBarCubit>(context).changeSelectedIndex(page);
@@ -84,14 +85,17 @@ class _DesktopDashboardState extends State<DesktopDashboard> {
               launch('https://github.com/muhammedbilals', isNewTab: true);
             },
           ),
-          const SocialMediaIcons(
+          SocialMediaIcons(
             image: 'assets/images/linkedin.png',
+            onTap: () {
+              launch('https://www.linkedin.com/in/muhammedbilals/');
+            },
           ),
-          const SocialMediaIcons(
-            image: 'assets/images/x.png',
-          ),
-          const SocialMediaIcons(
+           SocialMediaIcons(
             image: 'assets/images/whatsapp.png',
+            onTap: () {
+              launch('https://wa.me/+919497705305');
+            },
           ),
           sboxW,
         ],

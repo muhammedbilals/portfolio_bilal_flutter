@@ -6,8 +6,8 @@ import 'package:portfolio_bilal_flutter/model/projects_data.dart';
 import 'package:portfolio_bilal_flutter/presentation/utils/hover_effect_extention.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/project_card_widget.dart';
 
-class ProjectsPage extends StatelessWidget {
-  const ProjectsPage({
+class MobileProjectsPage extends StatelessWidget {
+  const MobileProjectsPage({
     super.key,
   });
 
@@ -16,7 +16,7 @@ class ProjectsPage extends StatelessWidget {
     return SizedBox(
       height: 100.h,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 100.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -40,14 +40,15 @@ class ProjectsPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 65.h,
+              height: 70.h,
               child: ListView.builder(
-
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: false,
                 itemCount: projectData.length,
                 itemBuilder: (context, index) {
-                  return  ProjectCard(projects: projectData[index]).translateOnHover;
+                  return ProjectCard(
+                    projects: projectData[index],
+                  ).translateOnHover;
                 },
               ),
             ),

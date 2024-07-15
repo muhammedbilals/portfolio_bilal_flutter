@@ -11,13 +11,18 @@ import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/gestures.dart';
 
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options:DefaultFirebaseOptions.currentPlatform );
-  runApp(MultiProvider(
-    providers: [ChangeNotifierProvider(create: (_) => SideMenuController())],
-    child: const MyApp(),
-  ));
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.web
+  );
+  runApp(
+    MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => SideMenuController())],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -36,7 +41,7 @@ class MyApp extends StatelessWidget {
           },
         ),
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Muhammed Bilal',
         theme: ThemeData(
           primaryIconTheme: const IconThemeData(color: AppColors.colorwhite),
           fontFamily: GoogleFonts.poppins().fontFamily,

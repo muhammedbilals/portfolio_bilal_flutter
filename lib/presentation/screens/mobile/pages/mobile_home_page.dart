@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
-import 'package:portfolio_bilal_flutter/presentation/utils/hover_effect_extention.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/button_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart';
+
 import 'dart:html' as html;
 
-class DeskTopHomePage extends StatelessWidget {
-  const DeskTopHomePage({
+class MobiletHomePage extends StatelessWidget {
+  const MobiletHomePage({
     super.key,
   });
 
@@ -25,8 +26,9 @@ class DeskTopHomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 100),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,6 +38,7 @@ class DeskTopHomePage extends StatelessWidget {
                           style: TextStyle(
                               color: AppColors.colorwhite, fontSize: 25),
                         ),
+                        sbox,
                         const Text(
                           'Muhammed Bilal S',
                           style: TextStyle(
@@ -43,23 +46,24 @@ class DeskTopHomePage extends StatelessWidget {
                               fontSize: 40,
                               fontWeight: FontWeight.bold),
                         ),
+                        sbox,
                         Wrap(
                           spacing: 5,
                           children: [
                             const TextContainer(
                               text: 'Flutter Developer',
-                              image: 'assets/images/flutter.png',
+                              image: 'flutter',
                             ),
                             sbox20,
                             const TextContainer(
                               text: 'UI Designer',
-                              image: 'assets/images/figma.png',
+                              image: 'figma.png',
                             ),
                           ],
                         ),
                         sbox20,
                         SizedBox(
-                          width: 35.w,
+                          width: 90.w,
                           child: const Text(
                             'Built with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data base',
                             style: TextStyle(color: AppColors.colorwhite),
@@ -73,14 +77,13 @@ class DeskTopHomePage extends StatelessWidget {
               ),
               sbox20,
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 100),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Wrap(spacing: 15, children: [
-                  ButtonWidget(
+                  const ButtonWidget(
                       textColor: AppColors.colorwhite,
                       buttonColor: AppColors.colorred,
                       icon: Icons.download_for_offline_rounded,
                       text: 'Download CV',
-                      onTap: () {},
                       width: 200),
                   ButtonWidget(
                       textColor: AppColors.colorwhite,
@@ -93,7 +96,7 @@ class DeskTopHomePage extends StatelessWidget {
                       },
                       width: 200),
                 ]),
-              )
+              ),
               // Expanded(
               //   child: PageView(
               //       scrollDirection: Axis.vertical,
@@ -116,22 +119,22 @@ class DeskTopHomePage extends StatelessWidget {
               // )
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 60),
-            child: Container(
-              constraints: const BoxConstraints(
-                maxHeight: 300,
-                maxWidth: 300,
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(50),
-                child: Image.network(
-                  'https://avatars.githubusercontent.com/u/97529912?v=4',
-                  fit: BoxFit.cover,
-                ),
-              ).translateOnHover,
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 60),
+          //   child: Container(
+          //     constraints: const BoxConstraints(
+          //       maxHeight: 250,
+          //       maxWidth: 250,
+          //     ),
+          //     child: ClipRRect(
+          //       borderRadius: BorderRadius.circular(50),
+          //       child: Image.network(
+          //         'https://avatars.githubusercontent.com/u/97529912?v=4',
+          //         fit: BoxFit.cover,
+          //       ),
+          //     ).translateOnHover,
+          //   ),
+          // ),
         ],
       ),
     );

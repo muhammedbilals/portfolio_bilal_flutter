@@ -30,35 +30,39 @@ class ButtonWidget extends StatelessWidget {
       child: HoverBuilder(
           builder: (isHovered) => MouseRegion(
                 cursor: SystemMouseCursors.click,
-                child: Container(
-                  height: 50,
-                  width: width,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                  decoration: BoxDecoration(
-                      color: isHovered ? AppColors.bggray : buttonColor,
-                      borderRadius: BorderRadius.circular(15)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      icon != null
-                          ? Icon(icon, color: textColor)
-                          : const SizedBox.shrink(),
-                      image != null
-                          ? SizedBox(
-                              height: 20, width: 20, child: Image.asset(image!))
-                          : const SizedBox.shrink(),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                        child: Text(
-                          text,
-                          style:
-                              TextStyle(color: textColor, letterSpacing: 0.5),
-                        ),
-                      )
-                    ],
-                  ),
-                ).translateOnHover,
+                child: FittedBox(
+                  child: Container(
+                    height: 50,
+                    // width: width,
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                    decoration: BoxDecoration(
+                        color: isHovered ? AppColors.bggray : buttonColor,
+                        borderRadius: BorderRadius.circular(15)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        icon != null
+                            ? Icon(icon, color: textColor)
+                            : const SizedBox.shrink(),
+                        image != null
+                            ? SizedBox(
+                                height: 20,
+                                width: 20,
+                                child: Image.asset(image!))
+                            : const SizedBox.shrink(),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                          child: Text(
+                            text,
+                            style:
+                                TextStyle(color: textColor, letterSpacing: 0.5),
+                          ),
+                        )
+                      ],
+                    ),
+                  ).translateOnHover,
+                ),
               )),
     );
   }
