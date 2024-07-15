@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
@@ -77,10 +76,10 @@ class MobiletHomePage extends StatelessWidget {
                 ),
               ),
               sbox20,
-               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Wrap(spacing: 15, children: [
-                  ButtonWidget(
+                  const ButtonWidget(
                       textColor: AppColors.colorwhite,
                       buttonColor: AppColors.colorred,
                       icon: Icons.download_for_offline_rounded,
@@ -92,7 +91,7 @@ class MobiletHomePage extends StatelessWidget {
                       icon: Icons.mail,
                       text: 'Sent a Mail',
                       onTap: () {
-                         html.window
+                        html.window
                             .open('mailto:bilalmsofficial@gmail.com', "");
                       },
                       width: 200),

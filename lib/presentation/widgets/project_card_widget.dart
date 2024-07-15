@@ -7,8 +7,6 @@ import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
 import 'package:portfolio_bilal_flutter/model/project_model.dart';
 import 'package:portfolio_bilal_flutter/presentation/utils/responsive.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/button_widget.dart';
-import 'package:portfolio_bilal_flutter/presentation/widgets/experties_list_widget.dart';
-import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({

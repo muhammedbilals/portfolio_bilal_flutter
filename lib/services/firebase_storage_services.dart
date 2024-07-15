@@ -1,13 +1,18 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:firebase_storage/firebase_storage.dart';
 
 class FirebaseStorageService {
-  Future<String>  getImages(String imageFileName) async {
-final ref = FirebaseStorage.instance.ref().child(imageFileName);
+  Future<String> getImages(String imageFileName) async {
+    try {
+      final url =
+          FirebaseStorage.instance.ref().child('flutter.png').getDownloadURL();
 
-var url = await ref.getDownloadURL();
-print(url);
-return url;
-}
+      log(url.toString());
+      return url;
+    }  catch (e) {
+      throw FirebaseException;
+    }
+  }
 }
