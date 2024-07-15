@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
-import 'package:portfolio_bilal_flutter/core/config/firebase_options.dart';
 import 'package:portfolio_bilal_flutter/dashboard.dart';
 import 'package:portfolio_bilal_flutter/presentation/controllers/menu_controller.dart';
 import 'package:portfolio_bilal_flutter/presentation/cubits/nav_bar/nav_bar_cubit.dart';
