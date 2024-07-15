@@ -23,9 +23,13 @@ class TextContainer extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15)),
               child: Row(
                 children: [
-                  const CustomImage(
-                    imageName: "flutter",
-                  ),
+                 SizedBox(
+                      height: 40,
+                      width: 40,
+                      child: Image.asset(
+                        image,
+                        fit: BoxFit.cover,
+                      )),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 5.0),
                     child: Text(
