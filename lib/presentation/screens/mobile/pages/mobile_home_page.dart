@@ -52,12 +52,12 @@ class MobiletHomePage extends StatelessWidget {
                           children: [
                             const TextContainer(
                               text: 'Flutter Developer',
-                              image: 'assets/images/flutter.png',
+                              image: 'flutter',
                             ),
                             sbox20,
                             const TextContainer(
                               text: 'UI Designer',
-                              image: 'assets/images/figma.png',
+                              image: 'figma.png',
                             ),
                           ],
                         ),
