@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
+import 'package:portfolio_bilal_flutter/core/constant/strings.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/button_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart';
 
@@ -65,7 +66,7 @@ class MobiletHomePage extends StatelessWidget {
                         SizedBox(
                           width: 90.w,
                           child: const Text(
-                            'Built with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data base',
+                            AppStrings.homeBio,
                             style: TextStyle(color: AppColors.colorwhite),
                             overflow: TextOverflow.clip,
                           ),

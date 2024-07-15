@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/helpers/url_laucher.dart';
-import 'package:portfolio_bilal_flutter/presentation/screens/mobile/pages/mobile_experties_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/screens/mobile/pages/mobile_home_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/screens/mobile/pages/mobile_projects_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/social_media_icon.dart';

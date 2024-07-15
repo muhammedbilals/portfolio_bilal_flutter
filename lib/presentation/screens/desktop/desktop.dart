@@ -4,12 +4,9 @@ import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
 import 'package:portfolio_bilal_flutter/core/helpers/url_laucher.dart';
 import 'package:portfolio_bilal_flutter/presentation/cubits/nav_bar/nav_bar_cubit.dart';
-import 'package:portfolio_bilal_flutter/presentation/screens/desktop/pages/contact_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/screens/desktop/pages/home_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/appbar_button_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/header.dart';
-import 'package:portfolio_bilal_flutter/presentation/screens/tablet/pages/tablet_experties_page.dart';
-import 'package:portfolio_bilal_flutter/presentation/screens/tablet/pages/tablet_home_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/screens/desktop/pages/projects_page.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/social_media_icon.dart';
 

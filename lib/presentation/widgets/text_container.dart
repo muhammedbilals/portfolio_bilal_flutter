@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/presentation/utils/hover_effect_extention.dart';
 import 'package:portfolio_bilal_flutter/presentation/utils/hover_builder.dart';
-import 'package:portfolio_bilal_flutter/presentation/widgets/cached_image.dart';
 
 class TextContainer extends StatelessWidget {
   const TextContainer(

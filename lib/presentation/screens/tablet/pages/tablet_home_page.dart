@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:portfolio_bilal_flutter/core/colors/colors.dart';
 import 'package:portfolio_bilal_flutter/core/constant/constants.dart';
+import 'package:portfolio_bilal_flutter/core/constant/strings.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/button_widget.dart';
 import 'package:portfolio_bilal_flutter/presentation/widgets/text_container.dart';
 import 'dart:html' as html;
@@ -60,7 +61,7 @@ class TabletHomePage extends StatelessWidget {
                         SizedBox(
                           width: 50.w,
                           child: const Text(
-                            'Built with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data baseBuilt with flutter and local data as-built with flutter and local data base',
+                            AppStrings.homeBio,
                             style: TextStyle(color: AppColors.colorwhite),
                             overflow: TextOverflow.clip,
                           ),
@@ -71,10 +72,10 @@ class TabletHomePage extends StatelessWidget {
                 ),
               ),
               sbox20,
-               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 100),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 100),
                 child: Wrap(spacing: 15, children: [
-                  ButtonWidget(
+                  const ButtonWidget(
                       textColor: AppColors.colorwhite,
                       buttonColor: AppColors.colorred,
                       icon: Icons.download_for_offline_rounded,
@@ -86,7 +87,7 @@ class TabletHomePage extends StatelessWidget {
                       icon: Icons.mail,
                       text: 'Sent a Mail',
                       onTap: () {
-                         html.window
+                        html.window
                             .open('mailto:bilalmsofficial@gmail.com', "");
                       },
                       width: 200),
